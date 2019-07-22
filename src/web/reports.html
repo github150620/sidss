@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+  <table border="1" cellspacing="0" cellpadding="1">
+    <tr>
+      <th>股票代码</th>
+      <th>报告期</th>
+      <th>EPS</th>
+      <th>ROE</th>
+      <th>GPR</th>
+      <th>ASSET</th>
+      <th>DEBT</th>
+    </tr>
+{{ range .}}
+    <tr>
+      <td>{{ .StockId }}</td>
+      <td>{{ .Date }}</td>
+      <td>{{ .Eps | printf "%.2f" }}</td>
+      <td>{{ .Roe | printf "%.2f" }}%</td>
+      <td>{{ .Gpr | printf "%.2f" }}%</td>
+      <td></td>
+      <td></td>
+    </tr>
+{{ end }}
+  </table>
+</body>
+<style>
+table tr td {
+  text-align: right;
+}
+</style>
+</html>
